@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Hot Resorts App</title>
+  </head>
+  <body>
+    <h1> Random Text </h1>
+    {% for hotSpring in object_list %}  <! -- object_list это лист в который Джанго выгружает все данные с модельки  -->
+        <div>                           <! -- div это контейнер = лучше почитать в гугле -->
+            <h2>{{ hotSpring.name }}</h2>
+            <p>instagram: {{ hotSpring.insta }}</p>
+            <p>website: {{ hotSpring.website }}</p>
+        </div>
+    {% endfor %}
+  </body>
+</html>

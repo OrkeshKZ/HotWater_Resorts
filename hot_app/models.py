@@ -5,6 +5,7 @@ from django.db import models
 class HotSprings(models.Model):
     name = models.CharField(max_length=100)
     insta = models.TextField()
+    website = models.CharField(max_length=50, null=True, blank=True)
     
     def __str__(self):
         return self.name
