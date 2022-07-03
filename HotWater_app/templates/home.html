@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Touristic Plaises</title>
+</head>
+<body>
+    <h1>Touristic Plaises</h1>  
+    {% for object in object_list %}
+        <a href="{% url 'HotWaterPlaces' object.id %}" >{{ object.name }}</a>
+        <p>{{ object.location }}</p>  
+        <img src="{{ object.photo.url }}" width="300" height="400">
+    {% endfor %}
+</body>
+</html>
