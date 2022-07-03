@@ -3,14 +3,34 @@
     <title>Hot Resorts App</title>
   </head>
   <body>
-    <h1> Random Text </h1>
-    {% for hotSpring in object_list %}  <! -- object_list это лист в который Джанго выгружает все данные с модельки  -->
+      <h1>{{object.name}}</h1> 
+      {% if object.insta is not None and object.insta != "" %}
+      <p>instagram: <a href = "{{ object.insta }}"> {{ object.insta }}</a></p>
+      {% endif %}
+      {% if object.website is not None %}
+      <p>website: <a href = "{{ object.website }}"> {{ object.website }}</a></p>
+      {% endif %}
+      {% if object.geoposition is not None %}
+      <p>geoposition: <a href = "{{ object.geoposition }}"> {{ object.geoposition }}</a></p>
+      {% endif %}
+      {% if object.WhatsApp is not None %}
+      <p>WhatsApp: <a href = "{{ object.WhatsApp }}"> {{ object.WhatsApp }}</a></p>
+      {% endif %}
+      {% if object.Telegram is not None %}
+      <p>Telegram: <a href = "{{ object.Telegram }}"> {{ object.Telegram }}</a></p>
+      {% endif %}
+      {% if object.photo.url is not None %}
+      <img src="{{ object.photo.url }}" width="700" height="700">
+      {% endif %}
+  </body>
+</html>
+
+
+    {% comment %} {% for hotSpring in object_list %}  <! -- object_list это лист в который Джанго выгружает все данные с модельки  -->
         <div>                           <! -- div это контейнер = лучше почитать в гугле -->
             <h2>{{ hotSpring.name }}</h2>
             <p>instagram: {{ hotSpring.insta }}</p>
             <p>website: {{ hotSpring.website }}</p>
             <p>geoposition: {{ hotSpring.geoposition }}</p>
         </div>
-    {% endfor %}
-  </body>
-</html>
+    {% endfor %} {% endcomment %}

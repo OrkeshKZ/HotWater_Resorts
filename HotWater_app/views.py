@@ -10,4 +10,4 @@ class HotWaterListView(ListView):
 
 class HotWaterDetailView(DetailView):
     model = HotSprings
-    tamplate_name = 'HotWaterPlaces.html'
+    template_name = 'HotWaterPlaces.html'

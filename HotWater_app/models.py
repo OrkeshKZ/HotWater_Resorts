@@ -4,11 +4,13 @@ from django.db import models
 
 class HotSprings(models.Model):
     name = models.CharField(max_length=100)
-    insta = models.TextField()
+    insta = models.TextField(null=True, blank=True)
     website = models.CharField(max_length=50, null=True, blank=True)
     geoposition = models.CharField(max_length=100, null=True, blank=True)
     photo = models.ImageField(upload_to='photos', null=True, blank=True)
     location = models.CharField(max_length=50, null=True, blank=True)
+    WhatsApp = models.CharField(max_length=50, null=True, blank=True)
+    Telegram = models.CharField(max_length=50, null=True, blank=True)
 
     def __str__(self):
         return self.name
